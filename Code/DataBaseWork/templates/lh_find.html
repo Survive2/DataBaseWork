@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.js' %}"></script>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index">商品信息管理系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/goods_find/">
+                    商品信息查询
+                    <span class="sr-only">(current)</span></a></li>
+                <li><a href="/cs_find/">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    厂商信息查询
+                    <span class="sr-only">(current)</span></a></li>
+                <li><a href="/lh_find/">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    联合查询
+                    <span class="sr-only">(current)</span></a></li>
+                 <li><a href="/order_find/">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    销售订单查询
+                    <span class="sr-only">(current)</span></a></li>
+                <li><a href="/update/">修改</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                联合信息查询
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" method="post" action="/lh_find/">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">厂商编号</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="csbh" placeholder="请输入厂商编号" name="csbh">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">查询</button>
+                        <span style="color: red" class="text-center">
+            {{ error_msg }}
+     </span>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<nav class="container" style="text-align: center">
+    <div style="color: red">
+        该查询可查询出由某厂家生产的商品
+    </div>
+</nav>
+
+</body>
+</html>
+</body>
+</html>
