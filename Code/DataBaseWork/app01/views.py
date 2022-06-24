@@ -3,10 +3,10 @@ import pymysql
 from itertools import chain
 from django.utils.safestring import mark_safe
 from django.http import JsonResponse
-con = pymysql.connect(host='localhost',
-                      user='root',
-                      password='root',
-                      db='market',
+con = pymysql.connect(host='xxx',
+                      user='xxx',
+                      password='xxx',
+                      db='xxx',  #database name
                       autocommit=True
                       )
 cur = con.cursor()
