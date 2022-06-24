@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'DataBaseWork.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'market',
-         'USER': 'root',
-         'PASSWORD': 'root',
-         'HOST': '127.0.0.1',
-         'PORT': '3306'
+         'ENGINE': 'django.db.backends.xxx',
+         'NAME': 'xxx',
+         'USER': 'xxx',
+         'PASSWORD': 'xxx',
+         'HOST': 'xxx',
+         'PORT': 'xxx'
     }
 }
 
